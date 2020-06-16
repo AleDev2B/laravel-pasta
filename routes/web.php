@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 
   $cards = config('pasta');
+  $collection = collect($cards);
 
   $lunga = $collection -> WHERE('tipo','lunga');
   $corta = $collection -> WHERE('tipo','corta');
@@ -20,7 +21,10 @@ Route::get('/contacts', function () {
 Route::get('/showPasta/{id}', function ($id) {
 
   $cards = config('pasta');
-  $card = $cards[$id];
-  
-    return view('showPasta', compact('card'));
+  $collection = collect($cards) ->map(function ($item, $key) {
+    $item['id'] = $key;
+    return $item ;
+});
+
+    return view('showPasta', compact('cards'));
 }) -> name ('showPasta');
