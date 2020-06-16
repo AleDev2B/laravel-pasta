@@ -8,8 +8,8 @@
           <li>
           <img src="{{ $card['src'] }}" alt="immagine formato pasta">
           </li>
-          <li>
-          {{ $card['titolo'] }}
+          <li>{{$card['id']}}
+            <a href="{{route('showPasta')}}">{{ $card['titolo'] }}</a>
           </li>
           <li>
           {{ $card['descrizione'] }}
@@ -24,7 +24,7 @@
           <img src="{{ $card['src'] }}" alt="immagine formato pasta">
           </li>
           <li>
-          {{ $card['titolo'] }}
+            <a href="{{route('showPasta')}}">{{ $card['titolo'] }}</a>
           </li>
           <li>
           {{ $card['descrizione'] }}
@@ -39,7 +39,7 @@
           <img src="{{ $card['src'] }}" alt="immagine formato pasta">
           </li>
           <li>
-          {{ $card['titolo'] }}
+            <a href="{{route('showPasta')}}">{{ $card['titolo'] }}</a>
           </li>
           <li>
           {{ $card['descrizione'] }}
